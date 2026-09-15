@@ -95,7 +95,7 @@ const jsonLd = {
       "@id": "https://subchond.com/#organization",
       name: "SUBCHOND",
       url: "https://subchond.com",
-      logo: "https://subchond.com/images/knee-anatomy.png",
+      logo: "https://subchond.com/logo.png",
       description:
         "Specialized clinical platform providing whole-joint assessment and subchondral bone evaluation for knee osteoarthritis.",
       medicalSpecialty: ["Orthopedics", "SportsMedicine", "Rheumatology"],

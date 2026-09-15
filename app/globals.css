@@ -63,7 +63,7 @@ button, a {
 /* Use the viewport as the design unit on larger screens without clipping long forms or reading content. */
 @media (min-width: 1024px) {
   main > section:not(#knee) {
-    min-height: 100dvh;
+    min-height: calc(100dvh - 4.25rem);
   }
 }
 

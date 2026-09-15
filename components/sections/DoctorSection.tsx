@@ -53,7 +53,7 @@ export const DoctorSection: React.FC = () => {
   return (
     <section
       id="doctor"
-      className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden border-t border-black/[0.08]"
+      className="py-16 md:py-20 lg:py-[clamp(4.5rem,8vh,6rem)] px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden border-t border-black/[0.08]"
     >
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
@@ -84,7 +84,7 @@ export const DoctorSection: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative w-full aspect-[3/4] max-w-md rounded-3xl overflow-hidden border border-black/[0.08] bg-[#F5F5F7] shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
               <Image
-                src="/images/dr-manu-bora.jpg"
+                src="/images/dr-manu-bora.webp"
                 alt="Dr. Manu Bora, Orthopedic Surgeon"
                 fill
                 priority
@@ -116,7 +116,7 @@ export const DoctorSection: React.FC = () => {
                   <div className="pt-3">
                     <VideoPlayer
                       src="/videos/dr-manu.mp4"
-                      poster="/images/dr-manu-bora.jpg"
+                      poster="/images/dr-manu-bora.webp"
                       title="Why I look beyond cartilage"
                       autoPlay={true}
                     />

@@ -54,12 +54,12 @@ export const Approach: React.FC = () => {
   return (
     <section
       id="approach"
-      className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA] relative overflow-hidden border-t border-black/[0.08]"
+      className="py-16 md:py-20 lg:py-[clamp(4.5rem,8vh,6rem)] px-4 sm:px-6 lg:px-8 bg-[#F7F8FA] relative overflow-hidden border-t border-black/[0.08]"
     >
-      <div className="max-w-7xl mx-auto space-y-20 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-8 lg:space-y-10 relative z-10">
         
         {/* Editorial Headline */}
-        <div className="max-w-3xl space-y-6">
+        <div className="max-w-5xl space-y-4">
           <div className="flex items-center gap-2.5">
             <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
               04
@@ -76,34 +76,34 @@ export const Approach: React.FC = () => {
         </div>
 
         {/* Horizontal Storytelling Sequence (01 → 02 → 03 → 04) with Large Numbers & Video Visualizer */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left: 4 Horizontal Storytelling Steps */}
-          <div className="lg:col-span-7 flex flex-col space-y-4">
+          <div className="lg:col-span-7 flex flex-col space-y-2">
             {stages.map((stage, idx) => {
               const isActive = activeStep === idx;
               return (
                 <div
                   key={stage.number}
                   onClick={() => setActiveStep(idx)}
-                  className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 cursor-pointer border ${
+                  className={`p-4 sm:p-5 rounded-2xl transition-all duration-300 cursor-pointer border ${
                     isActive
                       ? 'bg-white border-[#0071E3] shadow-[0_12px_32px_rgba(0,113,227,0.08)]'
                       : 'bg-transparent border-transparent hover:bg-white/60'
                   }`}
                 >
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-4">
                     <span
-                      className={`text-3xl sm:text-4xl font-light tracking-tight transition-colors ${
+                      className={`text-2xl sm:text-3xl font-light tracking-tight transition-colors ${
                         isActive ? 'text-[#0071E3]' : 'text-[#9CA3AF]'
                       }`}
                     >
                       {stage.number}
                     </span>
 
-                    <div className="space-y-1 flex-1">
+                    <div className="space-y-0.5 flex-1">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-xl sm:text-2xl font-light text-[#111827] tracking-tight">
+                        <h3 className="text-lg sm:text-xl font-medium text-[#111827] tracking-tight">
                           {stage.title}
                         </h3>
                         {isActive && (
@@ -113,12 +113,12 @@ export const Approach: React.FC = () => {
                         )}
                       </div>
 
-                      <p className="text-sm sm:text-base font-medium text-[#4B5563]">
+                      <p className="text-xs sm:text-sm font-medium text-[#4B5563]">
                         {stage.subtitle}
                       </p>
 
                       {isActive && (
-                        <p className="text-xs sm:text-sm text-[#667085] pt-3 leading-relaxed border-t border-black/[0.06] mt-3">
+                        <p className="text-xs text-[#667085] pt-2.5 leading-relaxed border-t border-black/[0.06] mt-2.5">
                           {stage.description}
                         </p>
                       )}
@@ -131,7 +131,7 @@ export const Approach: React.FC = () => {
 
           {/* Right: Dynamic Video in The Subchond Approach */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="w-full max-w-[500px] space-y-3">
+            <div className="w-full max-w-[460px] space-y-2.5">
               {/* Step indicator tag above video */}
               <div className="flex items-center justify-between text-xs font-semibold px-1">
                 <span className="text-[#111827]">
@@ -150,12 +150,12 @@ export const Approach: React.FC = () => {
                   autoPlay={true}
                   loop={true}
                   muted={true}
-                  className="aspect-square sm:aspect-[4/3] w-full"
+                  className="aspect-[16/10] w-full"
                 />
               </div>
 
-              <div className="text-center pt-2">
-                <div className="text-base font-light text-[#111827] tracking-tight">
+              <div className="text-center pt-1">
+                <div className="text-sm font-medium text-[#111827] tracking-tight">
                   One knee. One complete picture.
                 </div>
                 <div className="text-xs text-[#667085] mt-0.5">

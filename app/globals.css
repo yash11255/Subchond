@@ -27,10 +27,44 @@ html {
 body {
   background: #F7F8FA;
   color: #111827;
-  font-family: var(--font-sans);
+  font-family: var(--font-geist-sans), var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* A restrained clinical texture keeps large light surfaces from feeling sterile. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.clinical-grid {
+  background-image:
+    linear-gradient(rgba(16, 42, 59, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 59, 0.045) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #0071E3;
+  outline-offset: 3px;
+}
+
+/* Use the viewport as the design unit on larger screens without clipping long forms or reading content. */
+@media (min-width: 1024px) {
+  main > section:not(#knee) {
+    min-height: 100dvh;
+  }
 }
 
 ::selection {
@@ -40,8 +74,8 @@ body {
 
 /* Editorial typography clamps specified by the creative direction - mobile safe */
 .text-hero-headline {
-  font-size: clamp(2.4rem, 6.5vw, 7.5rem);
-  line-height: 1.02;
+  font-size: clamp(2.3rem, 4.6vw, 5.85rem);
+  line-height: 0.98;
   letter-spacing: -0.035em;
   font-weight: 500;
   word-break: break-word;
@@ -49,7 +83,7 @@ body {
 }
 
 .text-section-headline {
-  font-size: clamp(2.0rem, 4.5vw, 5rem);
+  font-size: clamp(1.9rem, 4vw, 4.45rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
   font-weight: 500;

@@ -15,7 +15,7 @@ export const FAQSection: React.FC = () => {
   return (
     <section
       id="faq"
-      className="py-24 md:py-36 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA] relative overflow-hidden border-t border-black/[0.08]"
+      className="py-16 md:py-20 lg:py-[clamp(4.5rem,8vh,6rem)] px-4 sm:px-6 lg:px-8 bg-[#F7F8FA] relative overflow-hidden border-t border-black/[0.08]"
     >
       <div className="max-w-4xl mx-auto space-y-16 relative z-10">
         

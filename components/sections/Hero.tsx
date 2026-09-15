@@ -43,20 +43,20 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="knee"
-      className="relative min-h-screen pt-28 pb-20 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-center bg-[#071A2B] text-white overflow-hidden"
+      className="relative h-[100svh] min-h-0 md:h-[100dvh] pt-20 pb-14 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center bg-[#071A2B] text-white overflow-hidden"
     >
       {/* Cinematic Studio Lighting & Fine Mesh Grid */}
       <div className="absolute inset-0 bg-canvas-navy-grid opacity-40 pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[700px] h-[700px] bg-[radial-gradient(circle_at_50%_50%,rgba(0,113,227,0.18)_0%,transparent_70%)] pointer-events-none blur-3xl" />
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-6 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center relative z-10">
         
         {/* Left Column: Huge Editorial Headline & Minimalist Copy */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex flex-col justify-center space-y-8"
+          className="lg:col-span-5 flex flex-col justify-center space-y-6"
         >
           {/* Eyebrow Label */}
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[#0071E3] uppercase">
@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Anatomical Telemetry Specifications */}
-          <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 border-t border-white/10 text-left">
+          <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 border-t border-white/10 text-left">
             <div>
               <div className="text-[10px] font-mono text-white/40 tracking-wider uppercase">ANATOMICAL VIEW</div>
               <div className="text-xs sm:text-sm text-white font-medium mt-1">Coronal Multi-Plane</div>
@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
           className="lg:col-span-7 flex flex-col items-center relative"
         >
           {/* Main Visual Container - Full Scale */}
-          <div className="relative w-full max-w-2xl aspect-[4/5] sm:aspect-square flex items-center justify-center">
+          <div className="relative w-full max-w-2xl aspect-[4/5] sm:aspect-square lg:max-h-[calc(100dvh-11rem)] flex items-center justify-center">
             
             {/* The 3D Anatomical Knee Render */}
             <motion.div
@@ -279,10 +279,10 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Subtle Scroll Down Prompt */}
-      <div className="absolute bottom-6 inset-x-0 flex justify-center items-center pointer-events-none">
+      <div className="absolute bottom-6 inset-x-0 flex justify-center items-center pointer-events-none lg:hidden">
         <div className="flex flex-col items-center text-[10px] font-mono tracking-widest text-white/40 uppercase">
           <span>SCROLL TO EXPLORE THE JOINT</span>
-          <ChevronDown className="w-4 h-4 mt-1 text-[#0071E3] animate-bounce" />
+          <ChevronDown className="w-4 h-4 mt-1 text-[#0071E3] animate-pulse" />
         </div>
       </div>
     </section>

@@ -21,18 +21,14 @@ export const FAQSection: React.FC = () => {
         
         {/* Editorial Headline */}
         <div className="text-center space-y-4">
-          <div className="flex items-center justify-center gap-2.5">
-            <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-              10
-            </span>
-            <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-              FREQUENTLY ASKED QUESTIONS
-            </span>
+          <div className="reference-kicker justify-center">
+            <span>Frequently asked questions</span>
+            <span className="reference-kicker-index">10</span>
           </div>
 
           <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
             Questions patients <br />
-            <span className="text-[#0071E3] font-normal">usually ask.</span>
+            <span className="reference-title-muted">usually ask.</span>
           </h2>
         </div>
 

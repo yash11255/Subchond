@@ -75,6 +75,7 @@ export const WholeJointModel: React.FC = () => {
               src="/images/knee-anatomy.png"
               alt="Whole joint knee model showing multi-structural interaction"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain filter contrast-105 drop-shadow-md"
             />
 

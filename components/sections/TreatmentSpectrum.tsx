@@ -225,18 +225,14 @@ export const TreatmentSpectrum = () => {
       <div className="relative z-10 mx-auto max-w-7xl space-y-8 lg:space-y-9">
         <header className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-3xl space-y-5">
-            <div className="flex items-center gap-2.5">
-              <span className="rounded-full bg-[#0071E3]/10 px-2.5 py-0.5 font-mono text-xs font-semibold tracking-wider text-[#0071E3]">
-                05
-              </span>
-              <span className="text-xs font-semibold tracking-[0.14em] text-[#667085]">
-                TREATMENT CONTINUUM
-              </span>
+            <div className="reference-kicker">
+              <span>Treatment continuum</span>
+              <span className="reference-kicker-index">05</span>
             </div>
 
             <h2 className="text-section-headline font-light tracking-tight text-[#111827]">
               Different knees. <br />
-              <span className="font-normal text-[#0071E3]">Different decisions.</span>
+              <span className="reference-title-muted">Different decisions.</span>
             </h2>
 
             <p className="max-w-2xl text-editorial-body text-[#4B5563]">

@@ -69,18 +69,14 @@ export const SubchondralBone: React.FC = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl space-y-4"
           >
-            <div className="flex items-center gap-2.5">
-              <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-                03
-              </span>
-              <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-                HIGH-RESOLUTION DISSECTION
-              </span>
+            <div className="reference-kicker">
+              <span>High-resolution dissection</span>
+              <span className="reference-kicker-index">03</span>
             </div>
 
             <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
               Look beneath <br />
-              <span className="text-[#0071E3] font-normal">the cartilage.</span>
+              <span className="reference-title-muted">the cartilage.</span>
             </h2>
 
             <p className="text-editorial-body text-[#4B5563] max-w-[60ch]">
@@ -137,6 +133,7 @@ export const SubchondralBone: React.FC = () => {
                     src="/images/knee-cross-section.png"
                     alt="Histological cross section of cartilage and subchondral bone"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
                     className={`object-cover ${current.scale} ${zoomLevel >= 2 ? 'translate-y-[-8%]' : 'translate-y-0'}`}
                   />
                 </motion.div>

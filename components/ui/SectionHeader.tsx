@@ -20,17 +20,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const isCenter = align === 'center';
 
   return (
-    <div className={`mb-12 md:mb-16 ${isCenter ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'} ${className}`}>
-      <div className={`flex items-center gap-2.5 mb-3.5 ${isCenter ? 'justify-center' : ''}`}>
-        <span className="font-mono text-xs font-semibold text-[#0071e3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071e3]/10">
-          {index}
-        </span>
-        <span className="text-xs font-semibold text-[#6e6e73] tracking-widest uppercase">
-          {badge}
-        </span>
+    <div className={`mb-12 md:mb-16 ${isCenter ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'} ${className}`}>
+      <div className={`reference-kicker mb-5 ${isCenter ? 'justify-center' : ''}`}>
+        <span>{badge}</span>
+        <span className="reference-kicker-index">{index}</span>
       </div>
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] leading-[1.12] mb-4">
+      <h2 className="text-section-headline mb-4 text-[#111827]">
         {title}
       </h2>
 

@@ -165,18 +165,14 @@ export const WholeJointOA: React.FC = () => {
           
           {/* Left Column: Screen-as-Canvas Large Typography (No card clutter!) */}
           <div className="lg:col-span-6 space-y-8">
-            <div className="flex items-center gap-2.5">
-              <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-                02
-              </span>
-              <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-                PATHOPHYSIOLOGY OF THE JOINT
-              </span>
+            <div className="reference-kicker">
+              <span>Pathophysiology of the joint</span>
+              <span className="reference-kicker-index">02</span>
             </div>
 
             <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
               Osteoarthritis is not just <br />
-              <span className="text-[#0071E3] font-normal">cartilage wear.</span>
+              <span className="reference-title-muted">cartilage wear.</span>
             </h2>
 
             <p className="text-editorial-body text-[#4B5563] max-w-xl">
@@ -279,7 +275,7 @@ export const WholeJointOA: React.FC = () => {
                       className={`group absolute left-1/2 top-1/2 h-[340px] w-[250px] sm:h-[410px] sm:w-[300px] overflow-hidden rounded-[1.65rem] border border-white/30 bg-[#0A1520] will-change-transform ${isActive ? 'shadow-[0_24px_55px_rgba(10,28,44,0.26)]' : 'cursor-pointer shadow-lg'}`}
                       style={cardStyle}
                     >
-                      <Image src="/images/knee-anatomy.png" alt={`${structure.title} highlighted on a knee anatomy model`} fill className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]" draggable={false} />
+                      <Image src="/images/knee-anatomy.png" alt={`${structure.title} highlighted on a knee anatomy model`} fill sizes="(max-width: 640px) 250px, 300px" className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]" draggable={false} />
                       <AnatomyHighlight id={structure.id} />
                       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/55 to-transparent pointer-events-none" />
                       <div className="absolute top-4 left-4 right-4 flex items-start justify-between gap-2 text-[9px] font-mono tracking-[0.12em] text-white">

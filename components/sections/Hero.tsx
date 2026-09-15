@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { ContactActions } from '@/components/ui/ContactActions';
 
 export const Hero: React.FC = () => {
@@ -71,9 +71,12 @@ export const Hero: React.FC = () => {
           className="lg:col-span-5 flex flex-col justify-center space-y-6"
         >
           {/* Eyebrow Label */}
-          <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[#0071E3] uppercase">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3] animate-pulse" />
-            <span>SUBCHOND CLINICAL INITIATIVE</span>
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#60a5fa]/30 bg-[#0b2941]/75 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] text-[#93c5fd] uppercase backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#60a5fa] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#38bdf8]" />
+            </span>
+            <span>Whole-joint evaluation</span>
           </div>
 
           {/* Headline - Exact clamp(3.5rem, 8vw, 8rem) scale */}
@@ -106,18 +109,18 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Anatomical Telemetry Specifications */}
-          <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 border-t border-white/10 text-left">
-            <div>
-              <div className="text-[10px] font-mono text-white/40 tracking-wider uppercase">ANATOMICAL VIEW</div>
-              <div className="text-xs sm:text-sm text-white font-medium mt-1">Coronal Multi-Plane</div>
+          <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-left sm:gap-6">
+            <div className="min-w-0">
+              <div className="text-[8px] font-mono tracking-wider text-white/40 uppercase sm:text-[10px]">ANATOMICAL VIEW</div>
+              <div className="mt-1 text-[10px] font-medium text-white sm:text-sm">Coronal Multi-Plane</div>
             </div>
-            <div>
-              <div className="text-[10px] font-mono text-[#0071E3] tracking-wider uppercase">PAIN GENERATOR</div>
-              <div className="text-xs sm:text-sm text-[#0071E3] font-semibold mt-1">Subchondral Bone</div>
+            <div className="min-w-0">
+              <div className="text-[8px] font-mono tracking-wider text-[#38bdf8] uppercase sm:text-[10px]">PAIN GENERATOR</div>
+              <div className="mt-1 text-[10px] font-semibold text-[#38bdf8] sm:text-sm">Subchondral Bone</div>
             </div>
-            <div>
-              <div className="text-[10px] font-mono text-white/40 tracking-wider uppercase">DIAGNOSTICS</div>
-              <div className="text-xs sm:text-sm text-white font-medium mt-1">Whole-Joint MRI</div>
+            <div className="min-w-0">
+              <div className="text-[8px] font-mono tracking-wider text-white/40 uppercase sm:text-[10px]">DIAGNOSTICS</div>
+              <div className="mt-1 text-[10px] font-medium text-white sm:text-sm">Whole-Joint MRI</div>
             </div>
           </div>
         </motion.div>
@@ -190,14 +193,6 @@ export const Hero: React.FC = () => {
             </div>
           </div>
         </motion.div>
-      </div>
-
-      {/* Subtle Scroll Down Prompt */}
-      <div className="absolute bottom-6 inset-x-0 flex justify-center items-center pointer-events-none lg:hidden">
-        <div className="flex flex-col items-center text-[10px] font-mono tracking-widest text-white/40 uppercase">
-          <span>SCROLL TO EXPLORE THE JOINT</span>
-          <ChevronDown className="w-4 h-4 mt-1 text-[#0071E3] animate-pulse" />
-        </div>
       </div>
     </section>
   );

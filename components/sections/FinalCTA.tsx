@@ -28,6 +28,7 @@ export const FinalCTA: React.FC = () => {
             src="/images/knee-anatomy.png"
             alt="Cinematic knee anatomy background"
             fill
+            sizes="900px"
             className="object-contain filter blur-[1px] brightness-110"
           />
         </div>
@@ -37,14 +38,13 @@ export const FinalCTA: React.FC = () => {
 
       {/* Foreground Content */}
       <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-        <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#0071E3] uppercase">
-          <span className="w-2 h-2 rounded-full bg-[#0071E3] animate-pulse" />
-          <span>SUBCHOND EVALUATION</span>
+        <div className="reference-kicker justify-center text-[#60a5fa]">
+          <span className="bg-[#071A2B] px-1">Subchond evaluation</span>
         </div>
 
         <h2 className="text-section-headline text-white font-light tracking-tight">
           Before you treat your knee, <br />
-          <span className="text-[#0071E3] font-normal">understand it.</span>
+          <span className="text-slate-300 font-normal">understand it.</span>
         </h2>
 
         <p className="text-editorial-body text-white/70 max-w-2xl mx-auto">

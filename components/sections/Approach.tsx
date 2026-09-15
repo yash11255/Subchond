@@ -60,18 +60,14 @@ export const Approach: React.FC = () => {
         
         {/* Editorial Headline */}
         <div className="max-w-5xl space-y-4">
-          <div className="flex items-center gap-2.5">
-            <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-              04
-            </span>
-            <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-              THE SUBCHOND APPROACH
-            </span>
+          <div className="reference-kicker">
+            <span>The Subchond approach</span>
+            <span className="reference-kicker-index">04</span>
           </div>
 
           <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
             Start with the joint. <br />
-            <span className="text-[#0071E3] font-normal">Then decide on treatment.</span>
+            <span className="reference-title-muted">Then decide on treatment.</span>
           </h2>
         </div>
 

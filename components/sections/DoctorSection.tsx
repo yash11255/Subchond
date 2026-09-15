@@ -59,17 +59,13 @@ export const DoctorSection: React.FC = () => {
         
         {/* Editorial Headline */}
         <div className="max-w-3xl space-y-6">
-          <div className="flex items-center gap-2.5">
-            <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-              07
-            </span>
-            <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-              EDITORIAL PROFILE
-            </span>
+          <div className="reference-kicker">
+            <span>Clinical profile</span>
+            <span className="reference-kicker-index">07</span>
           </div>
 
           <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
-            Meet <span className="text-[#0071E3] font-normal">Dr. Manu Bora</span>
+            Meet <span className="reference-title-muted">Dr. Manu Bora</span>
           </h2>
 
           <p className="text-editorial-body text-[#4B5563]">
@@ -87,6 +83,7 @@ export const DoctorSection: React.FC = () => {
                 src="/images/dr-manu-bora.webp"
                 alt="Dr. Manu Bora, Orthopedic Surgeon"
                 fill
+                sizes="(max-width: 1024px) 100vw, 448px"
                 priority
                 className="object-cover object-top"
               />

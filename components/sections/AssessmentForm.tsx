@@ -106,18 +106,14 @@ _Submitted via subchond.com Knee Assessment Portal_`;
         
         {/* Editorial Section Headline */}
         <div className="text-center space-y-4">
-          <div className="flex items-center justify-center gap-2.5">
-            <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">
-              09
-            </span>
-            <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">
-              PATIENT INTAKE
-            </span>
+          <div className="reference-kicker justify-center">
+            <span>Patient intake</span>
+            <span className="reference-kicker-index">09</span>
           </div>
 
           <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
             Let&apos;s understand <br />
-            <span className="text-[#0071E3] font-normal">your knee.</span>
+            <span className="reference-title-muted">your knee.</span>
           </h2>
           <p className="text-sm sm:text-base text-[#667085]">
             One question per step. Take two minutes to tell us about your joint.

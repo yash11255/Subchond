@@ -62,6 +62,7 @@ export const KneeCrossSection: React.FC = () => {
               src="/images/knee-cross-section.png"
               alt="Histological cross section of articular cartilage transitioning into subchondral bone plate and trabecular marrow"
               fill
+              sizes="(max-width: 1024px) 100vw, 58vw"
               className={`object-cover transition-all duration-700 ${
                 activeDepth === 1
                   ? 'scale-110 translate-y-[-4%]'
@@ -108,7 +109,7 @@ export const KneeCrossSection: React.FC = () => {
               disabled={loadSimulated}
               className="absolute bottom-3 right-3 z-20 flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/90 backdrop-blur-md border border-[#0071e3]/40 text-xs font-semibold text-[#0071e3] hover:bg-[#0071e3] hover:text-white transition-all shadow-md"
             >
-              <Zap className={`w-3.5 h-3.5 ${loadSimulated ? 'animate-bounce' : ''}`} />
+              <Zap className={`w-3.5 h-3.5 ${loadSimulated ? 'animate-pulse' : ''}`} />
               <span>{loadSimulated ? 'TRANSDUCING LOAD...' : 'SIMULATE JOINT LOAD'}</span>
             </button>
           </div>

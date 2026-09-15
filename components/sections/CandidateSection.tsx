@@ -59,12 +59,12 @@ export const CandidateSection: React.FC = () => {
         {/* Compact assessment header with a live, non-diagnostic selection indicator. */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 lg:items-end">
           <div className="lg:col-span-8 max-w-4xl space-y-4">
-            <div className="flex items-center gap-2.5">
-              <span className="font-mono text-xs font-semibold text-[#0071E3] tracking-wider px-2.5 py-0.5 rounded-full bg-[#0071E3]/10">06</span>
-              <span className="text-xs font-semibold text-[#667085] tracking-widest uppercase">CANDIDATE ASSESSMENT</span>
+            <div className="reference-kicker">
+              <span>Candidate assessment</span>
+              <span className="reference-kicker-index">06</span>
             </div>
             <h2 className="text-section-headline text-[#111827] font-light tracking-tight">
-              Could a joint-preservation <span className="text-[#0071E3] font-normal">assessment be right for you?</span>
+              Could a joint-preservation <span className="reference-title-muted">assessment be right for you?</span>
             </h2>
             <p className="text-editorial-body text-[#4B5563] max-w-[62ch]">
               Select the statements that reflect your current situation. This is a starting point for a clinical conversation, not a diagnosis.
@@ -127,7 +127,7 @@ export const CandidateSection: React.FC = () => {
               <motion.div className="absolute inset-[13%] rounded-full border border-[#54A7FF]/40" animate={{ scale: [0.94, 1.08, 0.94], opacity: [0.25, 0.65, 0.25] }} transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut' }} />
               <motion.div className="absolute inset-[24%] rounded-full border border-[#54A7FF]/25" animate={{ rotate: 360 }} transition={{ duration: 16, repeat: Infinity, ease: 'linear' }} />
               <motion.div animate={{ y: selected.length >= 3 ? -4 : 2, scale: selected.length >= 3 ? 1.025 : 1 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} className="absolute inset-0">
-                <Image src="/images/knee-anatomy.png" alt="Candidate assessment joint visualization" fill className="object-contain p-3 filter contrast-105 drop-shadow-[0_20px_32px_rgba(0,0,0,0.55)]" />
+                <Image src="/images/knee-anatomy.png" alt="Candidate assessment joint visualization" fill sizes="(max-width: 640px) 100vw, 390px" className="object-contain p-3 filter contrast-105 drop-shadow-[0_20px_32px_rgba(0,0,0,0.55)]" />
               </motion.div>
               <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-mono font-semibold tracking-[0.12em] text-[#102A3B]">JOINT REVIEW</div>
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10px] font-mono text-white/70"><span>SELECTED CRITERIA</span><span className="text-[#54A7FF]">0{selected.length} / 06</span></div>

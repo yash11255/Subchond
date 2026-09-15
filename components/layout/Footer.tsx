@@ -20,13 +20,11 @@ export const Footer: React.FC = () => {
               </p>
             </div>
 
-            <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-5 gap-y-3 border-t border-[#D8E0E6] pt-5 text-xs font-semibold text-[#405463] sm:grid-cols-3">
-              <a href="#oa-explanation" className="transition-colors hover:text-[#0071E3]">Why Subchond</a>
-              <a href="#subchondral-bone" className="transition-colors hover:text-[#0071E3]">The joint</a>
-              <a href="#treatment" className="transition-colors hover:text-[#0071E3]">Treatment</a>
-              <a href="#candidate" className="transition-colors hover:text-[#0071E3]">Assessment</a>
-              <a href="#doctor" className="transition-colors hover:text-[#0071E3]">Dr. Manu Bora</a>
-              <a href="#science" className="transition-colors hover:text-[#0071E3]">Research</a>
+            <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-5 gap-y-3 border-t border-[#D8E0E6] pt-5 text-xs font-semibold text-[#405463]">
+              <a href="#whole-joint-assessment" className="transition-colors hover:text-[#0071E3]">Why Subchond</a>
+              <a href="#knee-pain-drivers" className="transition-colors hover:text-[#0071E3]">Understand Your Pain</a>
+              <a href="#real-outcomes" className="transition-colors hover:text-[#0071E3]">Real Outcomes</a>
+              <a href="#assessment" className="transition-colors hover:text-[#0071E3]">Get Assessed</a>
             </nav>
           </div>
 

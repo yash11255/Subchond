@@ -5,15 +5,10 @@ import { MobileStickyBar } from '@/components/layout/MobileStickyBar';
 import { FloatingContact } from '@/components/layout/FloatingContact';
 
 import { Hero } from '@/components/sections/Hero';
-import { WholeJointOA } from '@/components/sections/WholeJointOA';
-import { SubchondralBone } from '@/components/sections/SubchondralBone';
-import { Approach } from '@/components/sections/Approach';
-import { TreatmentSpectrum } from '@/components/sections/TreatmentSpectrum';
-import { CandidateSection } from '@/components/sections/CandidateSection';
-import { DoctorSection } from '@/components/sections/DoctorSection';
-import { ResearchScience } from '@/components/sections/ResearchScience';
+import { WholeJointAssessment } from '@/components/sections/WholeJointAssessment';
+import { KneePainDrivers } from '@/components/sections/KneePainDrivers';
+import { RealOutcomes } from '@/components/sections/RealOutcomes';
 import { AssessmentForm } from '@/components/sections/AssessmentForm';
-import { FAQSection } from '@/components/sections/FAQSection';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export default function Home() {
@@ -25,34 +20,19 @@ export default function Home() {
       {/* SECTION 1: HERO */}
       <Hero />
 
-      {/* SECTION 2: OA IS MORE THAN CARTILAGE */}
-      <WholeJointOA />
+      {/* SECTION 2: WHY A WHOLE-JOINT ASSESSMENT MATTERS */}
+      <WholeJointAssessment />
 
-      {/* SECTION 3: WHAT IS SUBCHONDRAL BONE? */}
-      <SubchondralBone />
+      {/* SECTION 3: WHAT MAY BE DRIVING YOUR KNEE PAIN */}
+      <KneePainDrivers />
 
-      {/* SECTION 4: THE SUBCHOND APPROACH */}
-      <Approach />
+      {/* SECTION 4: REAL PATIENTS, REAL OUTCOMES */}
+      <RealOutcomes />
 
-      {/* SECTION 5: TREATMENT OPTIONS */}
-      <TreatmentSpectrum />
-
-      {/* SECTION 6: WHO IS A CANDIDATE? */}
-      <CandidateSection />
-
-      {/* SECTION 7: DR MANU BORA */}
-      <DoctorSection />
-
-      {/* SECTION 8: RESEARCH / SCIENCE */}
-      <ResearchScience />
-
-      {/* SECTION 9: JOINT ASSESSMENT FORM */}
+      {/* SECTION 5: JOINT ASSESSMENT FORM */}
       <AssessmentForm />
 
-      {/* SECTION 10: FAQ */}
-      <FAQSection />
-
-      {/* SECTION 11: FINAL CTA */}
+      {/* SECTION 6: FINAL CTA */}
       <FinalCTA />
 
       {/* FOOTER */}

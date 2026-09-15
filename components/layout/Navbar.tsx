@@ -3,9 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Phone } from 'lucide-react';
-import { CLINIC_CONTACT, getWhatsAppLink } from '@/data/contact';
-import { ContactActions, WhatsAppMark } from '@/components/ui/ContactActions';
+import { Menu, X } from 'lucide-react';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,65 +19,49 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Why Subchond', href: '#oa-explanation' },
-    { label: 'The Joint', href: '#subchondral-bone' },
-    { label: 'Treatment', href: '#treatment' },
-    { label: 'Assessment', href: '#candidate' },
-    { label: 'Dr. Manu Bora', href: '#doctor' },
-    { label: 'Research', href: '#science' },
+    { label: 'The Bigger Picture', href: '#whole-joint-assessment' },
+    { label: 'Understand Your Pain', href: '#knee-pain-drivers' },
+    { label: 'Real Outcomes', href: '#real-outcomes' },
+    { label: 'Get Assessed', href: '#assessment' },
   ];
 
   return (
     <header
       className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 py-2.5 border-b border-[#D8E0E6] shadow-[0_4px_18px_rgba(10,30,44,0.06)]'
-          : 'bg-white py-3 border-b border-transparent'
+          ? 'border-b border-[#dddcd8] bg-[#f8f7f4]/95 py-2 shadow-[0_3px_12px_rgba(30,31,32,0.04)] backdrop-blur-md'
+          : 'border-b border-transparent bg-[#f8f7f4] py-2.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
         
         {/* Brand lockup */}
         <Link
           href="/"
-          className="group block w-[126px] sm:w-[148px] transition-transform duration-200 hover:scale-[1.015]"
+          className="group block w-[158px] transition-transform duration-200 hover:scale-[1.015] sm:w-[202px]"
         >
           <Image src="/logo.png" alt="Subchond Joint Preservation" width={2170} height={725} priority className="h-auto w-full" />
         </Link>
 
-        {/* Center/Right Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-[11px] font-semibold tracking-[0.08em] text-[#4F6372]">
+        {/* The compact navigation intentionally mirrors the reference hero's quiet hierarchy. */}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#505257] lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative py-1 transition-colors duration-200 hover:text-[#0071E3]"
+              className="relative py-1 transition-colors duration-200 hover:text-black"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* A direct clinical contact route is always available beside navigation. */}
         <div className="flex items-center gap-3">
           <a
-            href={CLINIC_CONTACT.call.href}
-            aria-label={`Call an Ortho Expert at ${CLINIC_CONTACT.call.display}`}
-            title="Call an Ortho Expert"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0D2A3A]/20 bg-white text-[#0D2A3A] text-[10px] font-semibold tracking-[0.08em] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0071E3] hover:bg-[#0071E3] hover:text-white active:translate-y-0 sm:w-auto sm:px-4 sm:py-2 sm:gap-1.5"
+            href="#assessment"
+            className="hidden h-10 items-center justify-center rounded-full border border-[#35383b] px-7 text-[10px] font-bold tracking-[0.15em] text-[#25282d] transition-colors duration-200 hover:bg-[#25282d] hover:text-white lg:flex"
           >
-            <Phone className="w-4 h-4" strokeWidth={2.3} />
-            <span className="hidden sm:inline">CALL AN ORTHO EXPERT</span>
-          </a>
-          <a
-            href={getWhatsAppLink('Hello Dr. Manu Bora’s team, I would like to share my MRI or X-ray for an online opinion.')}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`WhatsApp your MRI or X-ray to ${CLINIC_CONTACT.whatsapp.display}`}
-            title="WhatsApp Your MRI / X-Ray"
-            className="flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 active:translate-y-0"
-          >
-            <WhatsAppMark className="h-7 w-7" />
+            GET STARTED
           </a>
 
           {/* Mobile Hamburger Toggle */}

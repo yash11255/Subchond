@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -47,10 +48,10 @@ export const FinalCTA: React.FC = () => {
         </h2>
 
         <p className="text-editorial-body text-white/70 max-w-2xl mx-auto">
-          Start with a structured assessment of your symptoms, imaging and whole-joint health.
+          Start with a structured assessment of your symptoms, imaging and whole-joint health—or speak with the clinical team first.
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="pt-4 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3">
           <a
             href="#assessment"
             className="w-full sm:w-auto px-9 py-4 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-wider hover:bg-[#0055B3] transition-all flex items-center justify-center gap-2 shadow-xl shadow-[#0071E3]/30 text-center"
@@ -59,12 +60,7 @@ export const FinalCTA: React.FC = () => {
             <ArrowRight className="w-4 h-4" />
           </a>
 
-          <a
-            href="#science"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white/90 hover:text-white border border-white/15 text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 text-center"
-          >
-            <span>EXPLORE THE SCIENCE</span>
-          </a>
+          <ContactActions tone="dark" />
         </div>
       </div>
     </section>

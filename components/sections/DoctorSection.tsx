@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { VideoPlayer } from '../ui/VideoPlayer';
-import { Play, X, ArrowRight } from 'lucide-react';
+import { Play, X } from 'lucide-react';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 export const DoctorSection: React.FC = () => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -176,13 +176,19 @@ export const DoctorSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="space-y-3 pt-2">
+              <div>
+                <p className="mb-2 text-[11px] leading-relaxed text-[#667085]">Speak with Dr. Bora&apos;s clinical team or share your existing MRI/X-ray before deciding on a next step.</p>
+                <ContactActions
+                  compact
+                  whatsappMessage="Hello Dr. Manu Bora’s team, I would like to share my MRI or X-ray for a knee consultation."
+                />
+              </div>
               <a
                 href="#assessment"
                 className="inline-flex items-center gap-2 text-xs font-semibold text-[#0071E3] hover:underline"
               >
-                <span>REQUEST AN INDIVIDUALIZED ASSESSMENT</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Or start an individualized assessment</span>
               </a>
             </div>
           </div>

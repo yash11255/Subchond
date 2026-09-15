@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { PainMapSelector, PainZone } from '../anatomy/PainMapSelector';
 import {
   ArrowRight,
@@ -10,6 +10,8 @@ import {
   CheckCircle2,
   FileCheck
 } from 'lucide-react';
+import { CLINIC_CONTACT } from '@/data/contact';
+import { WhatsAppMark } from '@/components/ui/ContactActions';
 
 export const AssessmentForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -59,7 +61,7 @@ export const AssessmentForm: React.FC = () => {
   };
 
   const generateWhatsAppUrl = () => {
-    const targetNumber = '919310138022';
+    const targetNumber = CLINIC_CONTACT.whatsapp.number;
     const message = `*SUBCHOND Patient Assessment*
 ------------------------------------
 *Patient Name:* ${name.trim() || 'Not specified'}
@@ -142,7 +144,7 @@ _Submitted via subchond.com Knee Assessment Portal_`;
                   <span className="font-normal text-[#0071E3]">Connecting you on WhatsApp...</span>
                 </h3>
                 <p className="text-sm sm:text-base text-[#4B5563] max-w-md mx-auto leading-relaxed">
-                  Your clinical assessment has been formatted. We are opening WhatsApp to connect directly with Dr. Manu Bora&apos;s clinical team at <span className="font-mono font-semibold text-[#111827]">+91 93101 38022</span>.
+                  Your clinical assessment has been formatted. We are opening WhatsApp to connect directly with Dr. Manu Bora&apos;s clinical team at <span className="font-mono font-semibold text-[#111827]">{CLINIC_CONTACT.whatsapp.display}</span>.
                 </p>
               </div>
 
@@ -154,7 +156,8 @@ _Submitted via subchond.com Knee Assessment Portal_`;
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium text-sm transition-all shadow-lg shadow-[#25D366]/20"
                   >
-                    <span>Open in WhatsApp (+91 93101 38022)</span>
+                    <WhatsAppMark className="h-5 w-5" />
+                    <span>Open in WhatsApp ({CLINIC_CONTACT.whatsapp.display})</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
                   <span className="text-xs text-[#667085]">

@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { VideoPlayer } from '../ui/VideoPlayer';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 export type OAStructureKey = 'cartilage' | 'subchondral' | 'meniscus' | 'synovium' | 'alignment';
 
@@ -222,6 +223,14 @@ export const WholeJointOA: React.FC = () => {
                 </p>
               </motion.div>
             </AnimatePresence>
+
+            <div className="flex flex-col gap-2 pt-1">
+              <p className="text-[11px] leading-relaxed text-[#667085]">Already have imaging? Let the clinical team know what is troubling your knee.</p>
+              <ContactActions
+                compact
+                whatsappMessage="Hello Dr. Manu Bora’s team, I would like to share my MRI or X-ray and understand what may be contributing to my knee symptoms."
+              />
+            </div>
           </div>
 
           {/* Same perspective carousel behavior as imediver, using one anatomy image with five overlays. */}

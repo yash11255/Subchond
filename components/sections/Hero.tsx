@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Layers, Sparkles, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 export const Hero: React.FC = () => {
   // Cinematic scroll/interactive stages: 0: Full Joint, 1: Cartilage, 2: Subchondral Bone, 3: Meniscus & Joint Space
@@ -81,22 +82,16 @@ export const Hero: React.FC = () => {
             </p>
           </div>
 
-          {/* Action CTAs */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          {/* The primary learning path remains, with a direct route to the clinical team alongside it. */}
+          <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             <a
               href="#oa-explanation"
-              className="px-8 py-4 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-wider hover:bg-[#0055B3] transition-all duration-200 shadow-lg shadow-[#0071E3]/25 flex items-center justify-center gap-2 text-center"
+              className="px-7 py-3.5 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-wider hover:bg-[#0055B3] transition-all duration-200 shadow-lg shadow-[#0071E3]/25 flex items-center justify-center gap-2 text-center"
             >
               <span>UNDERSTAND MY KNEE</span>
               <ArrowRight className="w-4 h-4" />
             </a>
-
-            <a
-              href="#science"
-              className="px-7 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white/90 hover:text-white border border-white/15 text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 text-center"
-            >
-              <span>EXPLORE THE SCIENCE</span>
-            </a>
+            <ContactActions tone="dark" compact />
           </div>
 
           {/* Anatomical Telemetry Specifications */}

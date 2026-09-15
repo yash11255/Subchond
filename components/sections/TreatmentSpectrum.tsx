@@ -11,6 +11,7 @@ import {
 import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
+import { ContactActions } from '@/components/ui/ContactActions';
 
 const CAROUSEL_STEP = 254;
 const CAROUSEL_EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
@@ -350,6 +351,14 @@ export const TreatmentSpectrum = () => {
                 <p className="text-xs leading-relaxed text-[#667085]">{current.keyNote}</p>
               </div>
             </div>
+
+            <div className="pt-1">
+              <p className="mb-2 text-[11px] leading-relaxed text-[#667085]">Discuss the options that fit your symptoms, imaging and goals.</p>
+              <ContactActions
+                compact
+                whatsappMessage="Hello Dr. Manu Bora’s team, I would like to share my MRI or X-ray and discuss which knee treatment options may be appropriate to explore."
+              />
+            </div>
           </div>
 
           <div className="min-w-0">
@@ -445,17 +454,6 @@ export const TreatmentSpectrum = () => {
                     </article>
                   );
                 })}
-              </div>
-
-              <div className="pointer-events-none absolute inset-x-8 bottom-4 flex items-center gap-3 text-[0.62rem] font-mono tracking-[0.13em] text-[#52606D] sm:inset-x-10">
-                <span>DRAG TO EXPLORE</span>
-                <div className="h-px flex-1 overflow-hidden bg-[#52606D]/20">
-                  <div
-                    className="h-full origin-left bg-[#0071E3] transition-transform duration-300"
-                    style={{ transform: `scaleX(${(activeTier + 1) / treatmentTiers.length})` }}
-                  />
-                </div>
-                <span>{isManuallyPaused || reducedMotion ? 'PAUSED' : 'AUTO'}</span>
               </div>
             </div>
           </div>

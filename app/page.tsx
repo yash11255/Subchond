@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MobileStickyBar } from '@/components/layout/MobileStickyBar';
+import { FloatingContact } from '@/components/layout/FloatingContact';
 
 import { Hero } from '@/components/sections/Hero';
 import { WholeJointOA } from '@/components/sections/WholeJointOA';
@@ -59,6 +60,9 @@ export default function Home() {
 
       {/* DEDICATED MOBILE BOTTOM CTA DOCK */}
       <MobileStickyBar />
+
+      {/* DESKTOP HOVER-REVEAL CONTACT DOCK */}
+      <FloatingContact />
     </main>
   );
 }

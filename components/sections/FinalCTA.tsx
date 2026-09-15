@@ -21,7 +21,7 @@ export const FinalCTA: React.FC = () => {
         <div className="space-y-8">
           <div className="reference-kicker text-[#60a5fa]">
             <span>Final assessment</span>
-            <span className="reference-kicker-index text-white/40">06</span>
+            <span className="reference-kicker-index text-white/40">07</span>
           </div>
 
           <h2 className="text-section-headline font-light tracking-tight text-white">
@@ -62,7 +62,6 @@ export const FinalCTA: React.FC = () => {
               sizes="(max-width: 1024px) 80vw, 32rem"
               className="object-cover"
             />
-
             <svg
               viewBox="0 0 100 100"
               preserveAspectRatio="none"

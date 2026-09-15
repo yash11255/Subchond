@@ -26,8 +26,18 @@ CC BY-SA 4.0 requires visible attribution wherever these two X-rays are
 used; see the credit line rendered in RealOutcomes.tsx. Do not remove it
 without swapping to a CC0/attribution-free replacement.
 
-Still pending (not sourced): the four "patient story" activity photos
-(walking, gym, cycling, golf). Stock searches kept surfacing either
-irrelevant results or real, identifiable people in unrelated contexts
-(e.g. named attendees at a specific charity golf tournament), which would
-be worse to use here than an empty slot; see subchond-project-scope memory.
+- `outcomes-story-walking.jpg`, `outcomes-story-gym.jpg`,
+  `outcomes-story-cycling.jpg`, `outcomes-story-golf.jpg`
+  Mixkit video thumbnail frames (Mixkit Stock Video Free License, no
+  attribution required), from:
+  https://mixkit.co/free-stock-video/a-young-man-walks-to-get-to-the-waterfall-in-50562/
+  https://mixkit.co/free-stock-video/fitness-man-lifting-weights-at-the-gym-14661/
+  https://mixkit.co/free-stock-video/a-man-riding-his-bicycle-out-of-the-woods-17019/
+  https://mixkit.co/free-stock-video/close-up-of-a-golf-club-putting-a-golf-ball-45779/
+  Non-identifiable (back views, cropped torso, or no person at all in the
+  golf shot) placeholder video thumbnails for the "Patient Stories" cards,
+  temporary until real patient video exists. Unlike the earlier Wikimedia
+  Commons search for these same four activities, Mixkit's library is
+  pre-cleared generic stock footage, not real people in a specific
+  real-world context repurposed out of context.
+

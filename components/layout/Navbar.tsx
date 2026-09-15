@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { ContactActions } from '@/components/ui/ContactActions';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,6 +23,7 @@ export const Navbar: React.FC = () => {
     { label: 'The Bigger Picture', href: '#whole-joint-assessment' },
     { label: 'Understand Your Pain', href: '#knee-pain-drivers' },
     { label: 'Real Outcomes', href: '#real-outcomes' },
+    { label: 'Dr. Bora', href: '#dr-manu-bora' },
     { label: 'Get Assessed', href: '#assessment' },
   ];
 
@@ -57,6 +59,10 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="hidden lg:block">
+            <LanguageSwitcher />
+          </div>
+
           <a
             href="#assessment"
             className="hidden h-10 items-center justify-center rounded-full border border-[#35383b] px-7 text-[10px] font-bold tracking-[0.15em] text-[#25282d] transition-colors duration-200 hover:bg-[#25282d] hover:text-white lg:flex"
@@ -78,8 +84,11 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden absolute inset-x-0 top-full border-b border-[#D8E0E6] bg-[#F7F9FA] p-6 flex flex-col gap-4 shadow-[0_16px_30px_rgba(10,30,44,0.08)] animate-in slide-in-from-top duration-200">
-          <div className="border-b border-[#D8E0E6] pb-2 font-mono text-[11px] uppercase tracking-widest text-[#667085]">
-            Navigation Index
+          <div className="flex items-center justify-between border-b border-[#D8E0E6] pb-2">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-[#667085]">
+              Navigation Index
+            </span>
+            <LanguageSwitcher />
           </div>
           {navLinks.map((link) => (
             <a

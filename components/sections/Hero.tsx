@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck, Upload } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/contact';
+import { VideoLightbox } from '@/components/ui/VideoLightbox';
 
 export const Hero: React.FC = () => {
   const uploadMriLink = getWhatsAppLink(
@@ -16,10 +17,11 @@ export const Hero: React.FC = () => {
       className="relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden bg-[#f8f7f4] text-[#11141a] md:min-h-[calc(100dvh-5.25rem)]"
     >
       {/* The supplied anatomical render is intentionally the only visual focal point.
-          Desktop only: at low opacity behind mobile text this image's baked-in
-          "Cartilage" / "Subchondral Bone" labels ghosted through the body copy
-          as visual noise, and were illegible anyway at 6% opacity. Mobile gets
-          a clean text-first hero instead of a barely-visible watermark. */}
+          Desktop only: this absolutely-positioned version sits behind the text
+          column, which only works with a lot of room to its right. Mobile gets
+          its own in-flow copy of the same image further down (not this one),
+          since absolutely positioning it at low opacity across the whole
+          section previously ghosted its baked-in labels through the body copy. */}
       <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden overflow-hidden md:block md:w-[58vw]">
         <Image
           src="/hero.png"
@@ -42,6 +44,20 @@ export const Hero: React.FC = () => {
           <h1 className="max-w-[740px] text-[clamp(2.35rem,3.3vw,3.5rem)] font-bold leading-[0.985] tracking-[-0.04em] text-[#101319] text-balance">
             YOUR KNEE PAIN IS NOT JUST ABOUT WORN-OUT CARTILAGE.
           </h1>
+
+          {/* Mobile-only: the same anatomical render, shown as its own block in
+              normal flow (not behind the text) so it can't ghost through body
+              copy the way it did when it sat absolutely positioned at low
+              opacity across the whole section. Full opacity, fully legible. */}
+          <div className="relative mt-5 aspect-[4/5] w-full overflow-hidden rounded-2xl md:hidden">
+            <Image
+              src="/hero.png"
+              alt="Detailed knee anatomy highlighting cartilage and subchondral bone"
+              fill
+              sizes="100vw"
+              className="object-cover object-[center_38%]"
+            />
+          </div>
 
           <div className="mt-4 max-w-[620px] space-y-4 text-[clamp(0.96rem,1.25vw,1.25rem)] leading-[1.38] tracking-[-0.018em] text-[#5b5d61] md:mt-4">
             <p>
@@ -83,6 +99,16 @@ export const Hero: React.FC = () => {
               UPLOAD MY MRI / X-RAY
               <Upload className="h-[18px] w-[18px]" strokeWidth={1.65} />
             </a>
+          </div>
+
+          <div className="mt-5">
+            <VideoLightbox
+              videoSrc="/videos/whole-joint-explainer.mp4"
+              poster="/images/explainer-poster.jpg"
+              title="Treat the whole joint, not just the surface"
+              label="WATCH: TREAT THE WHOLE JOINT"
+              duration="0:09"
+            />
           </div>
 
           <div className="mt-6 flex max-w-[580px] items-start gap-3 text-[11px] leading-relaxed text-[#6a6c70] md:mt-7 md:text-xs">

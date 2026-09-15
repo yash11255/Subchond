@@ -7,7 +7,7 @@ import {
   Footprints,
   Dumbbell,
   CalendarClock,
-  Video,
+  Play,
 } from 'lucide-react';
 
 const VALUE_BADGES = [
@@ -17,14 +17,17 @@ const VALUE_BADGES = [
   { icon: CalendarClock, label: 'Longer Benefit' },
 ];
 
-// No real patient-story footage exists yet for this section, and stock
-// searches for these four activities kept surfacing either irrelevant
-// results or real, identifiable people from unrelated contexts (e.g. named
-// attendees at a specific charity golf tournament) — worse to use here than
-// an empty slot. These render as clearly marked pending slots; swap in
-// real, consented patient material before this goes live. See
-// subchond-project-scope memory and public/images/SOURCES.md.
-const PATIENT_STORIES = ['Back to Walking', 'Back to the Gym', 'Back to Cycling', 'Back to Golf'];
+// Thumbnails only, no real patient-story footage exists yet. These are
+// generic Mixkit stock video frames (non-identifiable), a temporary stand-in
+// until real, consented patient video exists. See public/images/SOURCES.md
+// and subchond-project-scope memory for why real people from unrelated
+// contexts (e.g. a specific charity golf tournament) were rejected instead.
+const PATIENT_STORIES = [
+  { label: 'Back to Walking', src: '/images/outcomes-story-walking.jpg' },
+  { label: 'Back to the Gym', src: '/images/outcomes-story-gym.jpg' },
+  { label: 'Back to Cycling', src: '/images/outcomes-story-cycling.jpg' },
+  { label: 'Back to Golf', src: '/images/outcomes-story-golf.jpg' },
+];
 
 const CLOSING_BADGES = [
   { icon: TrendingDown, title: 'Less Pain', subtitle: 'Move freely' },
@@ -129,16 +132,25 @@ export const RealOutcomes: React.FC = () => {
               Patient stories
             </h3>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {PATIENT_STORIES.map((label) => (
+              {PATIENT_STORIES.map(({ label, src }) => (
                 <div key={label} className="space-y-2">
-                  <div className="flex aspect-[3/4] flex-col items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] text-white/30">
-                    <Video className="h-6 w-6" strokeWidth={1.5} />
-                    <span className="text-[0.65rem] uppercase tracking-wide">Pending</span>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 bg-black">
+                    <Image src={src} alt="" fill sizes="180px" className="object-cover opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <span className="absolute inset-0 grid place-items-center">
+                      <span className="grid size-9 place-items-center rounded-full bg-white/90">
+                        <Play className="ml-0.5 h-3.5 w-3.5 fill-[#111827] text-[#111827]" />
+                      </span>
+                    </span>
                   </div>
                   <p className="text-xs font-medium text-white/80">{label}</p>
                 </div>
               ))}
             </div>
+            <p className="mt-3 text-[0.65rem] leading-snug text-white/30">
+              Placeholder thumbnails, not real patients. Swap in real patient video before
+              launch; see public/images/SOURCES.md.
+            </p>
           </div>
         </div>
       </div>

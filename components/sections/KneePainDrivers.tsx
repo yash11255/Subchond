@@ -16,41 +16,44 @@ import {
   Compass,
 } from 'lucide-react';
 
+// Dot positions are calibrated against the actual rendered knee-anatomy.png
+// (same coordinates proven out in WholeJointAssessment/FinalCTA), not
+// guessed against an inset crop the way the previous version was.
 const CALLOUTS = [
   {
     title: 'Cartilage wear',
     body: 'Cartilage can thin and become irregular in OA, reducing the cushioning surface.',
     side: 'left' as const,
-    top: '20%',
-    dot: { top: '30%', left: '38%' },
+    top: '22%',
+    dot: { top: '34%', left: '42%' },
   },
   {
-    title: 'Meniscal changes',
-    body: 'The meniscus may degenerate or fray, which can affect stability and load distribution.',
+    title: 'Subchondral bone',
+    body: 'The bone beneath cartilage may undergo changes, including increased stiffness and bone remodelling.',
     side: 'left' as const,
-    top: '52%',
-    dot: { top: '58%', left: '35%' },
+    top: '74%',
+    dot: { top: '70%', left: '40%' },
   },
   {
     title: 'Synovial inflammation',
     body: 'The synovium can become inflamed, which may contribute to pain, swelling and stiffness.',
     side: 'right' as const,
     top: '14%',
-    dot: { top: '26%', left: '68%' },
+    dot: { top: '30%', left: '68%' },
+  },
+  {
+    title: 'Meniscal changes',
+    body: 'The meniscus may degenerate or fray, which can affect stability and load distribution.',
+    side: 'right' as const,
+    top: '46%',
+    dot: { top: '56%', left: '63%' },
   },
   {
     title: 'Narrowed joint space',
     body: 'As cartilage wears, the space between bones can narrow.',
     side: 'right' as const,
-    top: '44%',
-    dot: { top: '50%', left: '62%' },
-  },
-  {
-    title: 'Subchondral bone',
-    body: 'The bone beneath cartilage may undergo changes, including increased stiffness and bone remodelling.',
-    side: 'right' as const,
-    top: '72%',
-    dot: { top: '70%', left: '42%' },
+    top: '78%',
+    dot: { top: '48%', left: '52%' },
   },
 ];
 
@@ -116,28 +119,29 @@ export const KneePainDrivers: React.FC = () => {
 
         {/* Diagram with callouts */}
         <div className="mx-auto w-full max-w-4xl">
-          <div className="relative aspect-square sm:aspect-[16/10] w-full">
-            <div className="absolute inset-x-[18%] inset-y-0 overflow-hidden rounded-[2rem] shadow-[0_18px_42px_rgba(10,30,44,0.12)]">
-              <Image
-                src="/images/knee-anatomy.png"
-                alt="Knee anatomy diagram showing structures that may contribute to osteoarthritis pain"
-                fill
-                sizes="(max-width: 1024px) 60vw, 40rem"
-                className="object-cover"
-              />
-            </div>
+          <div className="relative aspect-square sm:aspect-[16/10] w-full overflow-hidden rounded-[2rem] shadow-[0_18px_42px_rgba(10,30,44,0.12)]">
+            <Image
+              src="/images/knee-anatomy.png"
+              alt="Knee anatomy diagram showing structures that may contribute to osteoarthritis pain"
+              fill
+              sizes="(max-width: 1024px) 90vw, 56rem"
+              className="object-cover"
+            />
 
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+            {/* Lines and dots only make sense alongside their label cards,
+                which are lg:block only, so hide these at the same breakpoint
+                instead of leaving them pointing at nothing on mobile. */}
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block" aria-hidden="true">
               {CALLOUTS.map((c) => (
                 <line
                   key={c.title}
                   x1={parseFloat(c.dot.left)}
                   y1={parseFloat(c.dot.top)}
-                  x2={c.side === 'left' ? 24 : 76}
-                  y2={parseFloat(c.top) + 4}
-                  stroke="#111827"
-                  strokeOpacity={0.35}
-                  strokeWidth={0.25}
+                  x2={c.side === 'left' ? 27 : 73}
+                  y2={parseFloat(c.top)}
+                  stroke="white"
+                  strokeOpacity={0.7}
+                  strokeWidth={0.3}
                 />
               ))}
             </svg>
@@ -145,7 +149,7 @@ export const KneePainDrivers: React.FC = () => {
               <span
                 key={c.title}
                 style={{ top: c.dot.top, left: c.dot.left }}
-                className="absolute size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_0_2px_rgba(17,24,39,0.35)]"
+                className="absolute hidden size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_0_3px_rgba(17,24,39,0.4)] lg:block"
               />
             ))}
 
@@ -153,7 +157,7 @@ export const KneePainDrivers: React.FC = () => {
               <div
                 key={c.title}
                 style={{ top: c.top }}
-                className="absolute left-0 hidden w-56 -translate-y-1/2 rounded-xl border border-black/[0.08] bg-white p-3.5 shadow-[0_10px_28px_rgba(10,30,44,0.08)] lg:block"
+                className="absolute left-4 hidden w-52 -translate-y-1/2 rounded-xl border border-black/[0.06] bg-white/95 p-3.5 shadow-[0_12px_30px_rgba(10,30,44,0.18)] backdrop-blur-sm lg:block"
               >
                 <p className="text-sm font-semibold text-[#111827]">{c.title}</p>
                 <p className="mt-1 text-xs leading-snug text-[#667085]">{c.body}</p>
@@ -163,7 +167,7 @@ export const KneePainDrivers: React.FC = () => {
               <div
                 key={c.title}
                 style={{ top: c.top }}
-                className="absolute right-0 hidden w-56 -translate-y-1/2 rounded-xl border border-black/[0.08] bg-white p-3.5 shadow-[0_10px_28px_rgba(10,30,44,0.08)] lg:block"
+                className="absolute right-4 hidden w-52 -translate-y-1/2 rounded-xl border border-black/[0.06] bg-white/95 p-3.5 shadow-[0_12px_30px_rgba(10,30,44,0.18)] backdrop-blur-sm lg:block"
               >
                 <p className="text-sm font-semibold text-[#111827]">{c.title}</p>
                 <p className="mt-1 text-xs leading-snug text-[#667085]">{c.body}</p>

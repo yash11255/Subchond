@@ -8,6 +8,7 @@ import { Hero } from '@/components/sections/Hero';
 import { WholeJointAssessment } from '@/components/sections/WholeJointAssessment';
 import { KneePainDrivers } from '@/components/sections/KneePainDrivers';
 import { RealOutcomes } from '@/components/sections/RealOutcomes';
+import { DoctorProfile } from '@/components/sections/DoctorProfile';
 import { AssessmentForm } from '@/components/sections/AssessmentForm';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 
@@ -29,10 +30,13 @@ export default function Home() {
       {/* SECTION 4: REAL PATIENTS, REAL OUTCOMES */}
       <RealOutcomes />
 
-      {/* SECTION 5: JOINT ASSESSMENT FORM */}
+      {/* SECTION 5: MEET DR MANU BORA */}
+      <DoctorProfile />
+
+      {/* SECTION 6: JOINT ASSESSMENT FORM */}
       <AssessmentForm />
 
-      {/* SECTION 6: FINAL CTA */}
+      {/* SECTION 7: FINAL CTA */}
       <FinalCTA />
 
       {/* FOOTER */}

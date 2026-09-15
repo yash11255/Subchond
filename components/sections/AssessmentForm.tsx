@@ -147,7 +147,7 @@ _Submitted via subchond.com Joint Assessment Form_`;
         <div className="max-w-3xl space-y-5">
           <div className="reference-kicker">
             <span>Patient intake</span>
-            <span className="reference-kicker-index">05</span>
+            <span className="reference-kicker-index">06</span>
           </div>
 
           <h2 className="text-section-headline font-light tracking-tight text-[#111827]">

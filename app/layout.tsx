@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleTranslate } from "@/components/GoogleTranslate";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -152,6 +153,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-[#1d1d1f] antialiased selection:bg-[#0071e3] selection:text-white">
+        <GoogleTranslate />
         {children}
       </body>
     </html>

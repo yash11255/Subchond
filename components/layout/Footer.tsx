@@ -24,6 +24,7 @@ export const Footer: React.FC = () => {
               <a href="#whole-joint-assessment" className="transition-colors hover:text-[#0071E3]">Why Subchond</a>
               <a href="#knee-pain-drivers" className="transition-colors hover:text-[#0071E3]">Understand Your Pain</a>
               <a href="#real-outcomes" className="transition-colors hover:text-[#0071E3]">Real Outcomes</a>
+              <a href="#dr-manu-bora" className="transition-colors hover:text-[#0071E3]">Dr. Manu Bora</a>
               <a href="#assessment" className="transition-colors hover:text-[#0071E3]">Get Assessed</a>
             </nav>
           </div>

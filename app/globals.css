@@ -19,6 +19,42 @@
   --font-mono: "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
+/*
+ * Google Website Translator: keep the widget itself invisible and driven
+ * only through our own LanguageSwitcher UI (components/GoogleTranslate.tsx).
+ * Without this, Google injects a top banner iframe and pushes the whole
+ * page down by its height.
+ */
+.goog-te-hidden-host {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+/*
+ * Google's current widget uses obfuscated, version-dependent class names
+ * (e.g. "VIpgJd-ZVi9od-ORHb-OEVmcd") for the actual banner/tooltip iframes
+ * instead of the documented .goog-te-banner-frame, and that name can change
+ * with their releases. "skiptranslate" is the one stable marker they put on
+ * all of their own chrome, so target that instead of the versioned name.
+ */
+iframe.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: light;

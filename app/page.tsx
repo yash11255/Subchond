@@ -9,6 +9,7 @@ import { WholeJointAssessment } from '@/components/sections/WholeJointAssessment
 import { KneePainDrivers } from '@/components/sections/KneePainDrivers';
 import { RealOutcomes } from '@/components/sections/RealOutcomes';
 import { DoctorProfile } from '@/components/sections/DoctorProfile';
+import { SurgicalPrecision } from '@/components/sections/SurgicalPrecision';
 import { AssessmentForm } from '@/components/sections/AssessmentForm';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* SECTION 5: MEET DR MANU BORA */}
       <DoctorProfile />
+
+      {/* SECTION 5b: SURGICAL PRECISION & SETUP */}
+      <SurgicalPrecision />
 
       {/* SECTION 6: JOINT ASSESSMENT FORM */}
       <AssessmentForm />
